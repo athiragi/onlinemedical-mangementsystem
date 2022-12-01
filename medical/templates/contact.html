@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% comment %} {% block title %} Contact {% endblock title %} {% endcomment %}
+{% block head %}
+
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    body{
+        background-image: url("https://img.freepik.com/premium-photo/contact-us_36325-2135.jpg?w=2000");
+        background-size: 100% 740px;
+    }
+</style>
+{% endblock head %}
+
+
+{% block body %}
+<Center><h1 class="display-4">CONTACT US</h1></Center>
+
+<div class="container mt-2">
+
+    <div class="row">
+      <div class="col-md-3"></div>
+
+      <div class="col-md-6 bg-light p-5">
+        
+        {% comment %} {% include "messages.html" %}   {% endcomment %}
+
+
+    
+
+
+        <form action="/contact/" method="post">
+            {% csrf_token %}
+
+        
+          <label for="name">Name</label>
+
+          <div class="form-group">
+              <input 
+              type="text" 
+              id="name" 
+              class="form-control mb-3" 
+              placeholder="Enter Your Name" 
+              name="name" 
+              required>
+          </div>
+
+          <label for="email">Email</label>
+
+          <div class="form-group">
+              <input 
+              type="email" 
+              id="email" 
+              class="form-control mb-3"
+               placeholder="Enter Your Email Address" 
+               name="email"  
+               required>
+          </div>
+
+          
+
+          <label for="num">Phone Number</label>
+
+          <div class="form-group">
+              <input 
+              type="number" 
+              id="num" 
+              class="form-control mb-3" 
+              placeholder="Enter Your Mobile no."
+               name="num" 
+               required>
+          </div>
+
+          <label for="desc">How can i help?</label>
+
+          <div class="form-group">
+              <textarea 
+              type="text" 
+              id="desc" 
+              class="form-control mb-3"  
+              name="desc" 
+              required></textarea>
+          </div>
+
+        
+
+
+          
+          <div class="d-grid gap-2">
+              <button class="btn btn-dark" type="submit">Submit</button>
+           
+            </div>
+
+           
+        </form>
+       
+      </div>
+      
+
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+<br>
+<br>
+
+{% endblock body %}

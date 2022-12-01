@@ -1,0 +1,49 @@
+{% extends "userbase.html" %}
+{% comment %} {% block title %} About {% endblock title %} {% endcomment %}
+{% block body %}
+<br>
+
+<h2 class="text-center bg-dark text-success">Your Search results......</h2>
+
+<br />
+{% if allItems|length < 1%}
+
+<h1>Your Search did not match <span class="badge bg-secondary">Try Again</span></h1>
+<ul>
+<li>Make Sure You have Spelled Correct</li>
+</ul>
+{% endif %}
+
+<br />
+
+
+<div class="container mt-3">
+
+    <div class="row">
+       
+       {%for i in prod%}
+      <br><br>
+       <div class="card" style="width:19rem" >
+          
+     <img class="card-img-top" src="{{i.image}}" 
+     alt="Card image cap" 
+     style="width: 100%;
+     height: 15vw;
+     ">
+     <div class="card-body">
+       <h5 class="card-title">{{i.name}}</h5>
+       <p class="card-text">{{i.description}}</p>
+       <p class="card-text">Price:{{i.price}}</p>
+     <a href="/order/" data-target="" data-toggle="" data-caption="" class="btn-outline-success btn-lg btn-block text-truncate mt-auto">Order Now</a>
+   
+     </div>
+   </div>
+     {% endfor %}
+     </div>
+ 
+ </div>
+    
+ </div>
+
+
+{% endblock body %}

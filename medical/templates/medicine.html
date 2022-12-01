@@ -1,0 +1,41 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<center><h1>Medicine Details</h1></center>
+{% comment %} <style>
+  .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+</style> {% endcomment %}
+<div class="container">
+
+   <div class="row">
+      
+      {%for i in medical%}
+     <br><br>
+     <div class="col-md-3">
+      <div class="card" style="width:19rem" >
+         
+    <img class="card-img-top" src="{{i.image}}" 
+    alt="Card image cap" 
+    style="width: 100%;
+    height: 15vw;"
+   >
+    <div class="card-body">
+      <h5 class="card-title">{{i.name}}</h5>
+      <p class="card-text">{{i.description}}</p>
+      <p class="card-text">Price:{{i.price}}</p>
+    <a href="/order" data-target="" data-toggle="" data-caption="" class="btn btn-danger btn-lg btn-block text-truncate mt-auto">Add to Cart</a>
+  
+    </div>
+  </div>
+</div>
+    {% endfor %}
+    </div>
+
+ </div> 
+   
+</div>
+
+{% endblock body %}
